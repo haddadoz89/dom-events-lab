@@ -4,7 +4,7 @@ const buttons = document.querySelectorAll('.button');
 const display = document.querySelector('.display')
 /*-------------------------------- Variables --------------------------------*/
 let previousNumber
-let currentNumber
+let currentNumber=''
 let operator
 /*------------------------ Cached Element References ------------------------*/
 
@@ -16,8 +16,8 @@ buttons.forEach(button => {
       // Future logic to capture the button's value would go here...
     if (event.target.classList.contains('number')) {
         let value = event.target.innerText
-        currentNumber = value
-        display.textContent = value
+        currentNumber+= value // instructor help me in this he aded +=
+        display.textContent = Number(currentNumber) // also change the value to currentNumber, and tell about the Number()
     } else if (event.target.classList.contains('operator')) {
         let operation = event.target.innerText
         display.textContent = operation
